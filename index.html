@@ -35,7 +35,7 @@
     />
   </head>
   <body>
-    <section id="present">
+    <section id="present" class="hide">
       <div class="gift_cont">
         <div class="gift_box">
           <img src="./images/gift.webp" alt="" />
@@ -44,7 +44,7 @@
       </div>
     </section>
 
-    <section id="paper">
+    <section id="paper" class="hide">
       <div class="paper_cont">
         <header>
           <img src="./images/logo.png" alt="" />
@@ -62,7 +62,7 @@
       </div>
     </section>
 
-    <section id="eloise">
+    <section id="eloise" class="hide">
       <div id="eloise_says">
         Have you seen the latest Lady Whistledown? Oh, it's positively
         scandalous! I nearly dropped my book when I read it!
@@ -97,6 +97,9 @@
 
     go_inside.addEventListener("click", () => {
       var landing = document.getElementById("residence_section");
+      var eloise = document.getElementById("eloise");
+
+      eloise.classList.remove("hide");
       landing.animate(
         [
           { opacity: 1, transform: "scale(1)" }, // Initial state
@@ -116,6 +119,9 @@
     var read = document.getElementById("read");
     read.addEventListener("click", () => {
       var eloise = document.getElementById("eloise");
+      var paper = document.getElementById("paper");
+      paper.classList.remove("hide");
+
       eloise.animate(
         [
           { opacity: 1, transform: "scale(1)" }, // Initial state
@@ -135,6 +141,9 @@
     var gift = document.getElementById("gift");
     gift.addEventListener("click", () => {
       var paper = document.getElementById("paper");
+      var present = document.getElementById("present");
+      present.classList.remove("hide");
+
       paper.animate(
         [
           { opacity: 1, transform: "scale(1)" }, // Initial state
