@@ -9,8 +9,8 @@
   padding: 0;
 }
 
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -20,7 +20,7 @@ html:focus-within {
 
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 img,
@@ -80,18 +80,10 @@ html {
     top: -20%;
     opacity: 0%;
   }
-  40% {
-    top: 10%;
-    opacity: 100%;
-  }
-  90% {
-    top: 10%;
-    opacity: 100%;
-  }
+
   100% {
     top: 10%;
-    opacity: 0%;
-    display: none;
+    opacity: 100%;
   }
 }
 #residence_section .textbox {
@@ -144,7 +136,7 @@ html {
     opacity: 100%;
   }
 }
-#residence_section .come_text {
+#residence_section #come_text {
   position: absolute;
   width: -moz-fit-content;
   width: fit-content;
@@ -153,12 +145,8 @@ html {
   top: -20%;
   justify-content: center;
   align-items: center;
-  animation-name: come_texts;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  animation-delay: 6s;
 }
-#residence_section .come_text::before {
+#residence_section #come_text::before {
   position: absolute;
   width: 120%;
   height: 200%;
@@ -172,7 +160,7 @@ html {
   transform: translateX(-50%);
   z-index: 1;
 }
-#residence_section .come_text h1 {
+#residence_section #come_text h1 {
   color: black;
   text-align: center;
   width: 60vw;
@@ -183,6 +171,15 @@ html {
   font-size: 2rem;
   position: relative;
   z-index: 2;
+}
+#next {
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0;
+  i {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
 }
 @keyframes glowing {
   0% {
@@ -200,11 +197,11 @@ html {
   content: "";
   width: 2.5rem;
   height: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #85baff;
   top: 74vh;
   left: 54vw;
   border-radius: 100%;
-  outline: solid 10px rgba(255, 255, 255, 0.8);
+  outline: solid 10px #85baff;
   outline-offset: 3px;
   animation: infinite glowing 3s;
   cursor: pointer;
@@ -238,11 +235,11 @@ html {
   content: "";
   width: 2.5rem;
   height: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #85baff;
   top: 74vh;
   left: 60vw;
   border-radius: 100%;
-  outline: solid 10px rgba(255, 255, 255, 0.8);
+  outline: solid 10px #85baff;
   outline-offset: 3px;
   animation: infinite glowing 3s;
   cursor: pointer;
@@ -283,9 +280,9 @@ html {
   font-family: "Charm", serif;
   font-size: 1.5rem;
   -moz-column-count: 2;
-       column-count: 2;
+  column-count: 2;
   -moz-column-gap: 30px;
-       column-gap: 30px;
+  column-gap: 30px;
   height: 100%;
   margin: 4rem;
 }
@@ -309,6 +306,31 @@ html {
   top: 0;
   left: 0;
   z-index: 100;
+
+  #tanti {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    bottom: 2%;
+    width: 10%;
+    background-image: url(./images/tanti.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 1rem;
+  }
+
+  #auguri {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    bottom: 2%;
+    width: 10%;
+    background-image: url(./images/auguri.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    padding: 1rem;
+  }
 }
 #present .gift_cont {
   width: 60%;
@@ -356,4 +378,4 @@ html {
   font-family: "Gravitas One", serif;
   position: absolute;
   color: white;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
