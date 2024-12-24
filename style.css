@@ -1,0 +1,373 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition: none;
+  }
+}
+body,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none !important;
+}
+
+#residence_section {
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/residence.webp);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: none;
+  z-index: 400;
+}
+@keyframes textbox {
+  0% {
+    top: -20%;
+    opacity: 0%;
+  }
+  40% {
+    top: 10%;
+    opacity: 100%;
+  }
+  90% {
+    top: 10%;
+    opacity: 100%;
+  }
+  100% {
+    top: 10%;
+    opacity: 0%;
+    display: none;
+  }
+}
+#residence_section .textbox {
+  position: absolute;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 0%;
+  justify-content: center;
+  align-items: center;
+  top: 10%;
+  animation: textbox 5s forwards;
+}
+#residence_section .textbox::before {
+  position: absolute;
+  width: 115%;
+  height: 220%;
+  content: "";
+  background-image: url(./images/textbox.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: -70%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+#residence_section .textbox h1 {
+  color: black;
+  text-align: center;
+  width: 100%;
+  font-family: "Fleur De Leah", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  position: relative;
+  z-index: 2;
+}
+@keyframes come_texts {
+  0% {
+    display: none;
+    top: -20%;
+    opacity: 0%;
+  }
+  100% {
+    top: 10%;
+    display: flex;
+    opacity: 100%;
+  }
+}
+#residence_section .come_text {
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: -20%;
+  justify-content: center;
+  align-items: center;
+  animation-name: come_texts;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 6s;
+}
+#residence_section .come_text::before {
+  position: absolute;
+  width: 120%;
+  height: 200%;
+  content: "";
+  background-image: url(./images/textbox.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: -70%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+#residence_section .come_text h1 {
+  color: black;
+  text-align: center;
+  width: 60vw;
+  height: 12vh;
+  font-family: "Fleur De Leah", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+}
+@keyframes glowing {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+#residence_section #go_inside {
+  position: absolute;
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 74vh;
+  left: 54vw;
+  border-radius: 100%;
+  outline: solid 10px rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+  animation: infinite glowing 3s;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#eloise {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./images/eloise.webp);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+}
+#eloise #eloise_says {
+  position: absolute;
+  top: 10vh;
+  left: 45%;
+  background-color: white;
+  width: auto;
+  max-width: 50%;
+  border-radius: 4rem;
+  padding: 2rem;
+  font-family: "Charm", serif;
+  font-size: 2rem;
+}
+#eloise #read {
+  position: absolute;
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 74vh;
+  left: 60vw;
+  border-radius: 100%;
+  outline: solid 10px rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+  animation: infinite glowing 3s;
+  cursor: pointer;
+}
+
+#paper {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./images/living.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 200;
+}
+#paper .paper_cont {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 90%;
+  outline: 2px solid black;
+  border: 1px solid darkgrey;
+  outline-offset: -15px;
+  margin: auto;
+  padding: 2rem;
+  background-color: whitesmoke;
+}
+#paper .paper_cont header {
+  display: flex;
+  justify-content: center;
+}
+#paper .paper_cont header img {
+  width: 50%;
+}
+#paper .paper_cont p {
+  font-family: "Charm", serif;
+  font-size: 1.5rem;
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  height: 100%;
+  margin: 4rem;
+}
+#paper .paper_cont p #gift {
+  display: block;
+  text-align: end;
+  animation: glowing 3s infinite;
+  cursor: pointer;
+}
+
+#present {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./images/bridge.png);
+  background-size: cover;
+  background-position: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+#present .gift_cont {
+  width: 60%;
+  margin-top: 10%;
+}
+#present .gift_cont .gift_box {
+  animation: glowing 3s infinite;
+  position: relative;
+  z-index: 1;
+}
+#present .gift_cont .gift_box::after {
+  position: absolute;
+  font-family: "Gravitas One", serif;
+  content: "Sat 29 Mar 2025 - 7:30pm";
+  width: 200%;
+  height: 300px;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  left: 50%;
+  top: -10%;
+  transform: translateX(-50%);
+}
+#present .gift_cont .gift_box .conme {
+  position: absolute;
+  bottom: 1rem;
+  height: 4rem;
+  right: 0;
+  color: white;
+  transform: rotate(30deg);
+}
+#present .gift_cont .gift_box .conme::before {
+  position: absolute;
+  content: "";
+  bottom: -50%;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
+  background-image: url(./images/tommy.png);
+  background-size: contain;
+  z-index: 2;
+  border-radius: 100%;
+}
+#present .date {
+  font-family: "Gravitas One", serif;
+  position: absolute;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
